@@ -1,0 +1,10 @@
+[
+    {
+        "transactionName": "cadernetaExists",
+        "transactionLabel": "A test cadernetaExists transaction",
+        "arguments": [
+            "001"
+        ],
+        "transientData": {}
+    }
+]
