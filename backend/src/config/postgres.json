@@ -1,0 +1,21 @@
+{
+    "services": {
+      "databases-for-postgresql": [
+        {
+          "credentials": {
+            "connection": {
+              "postgres": {
+                "certificate": {
+                  "certificate_base64": "insert_your_credentials_here",
+                  "name": "insert_your_credentials_here"
+                },
+                "composed": [
+                  "insert_your_credentials_here"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    }
+}

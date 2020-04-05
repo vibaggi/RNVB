@@ -1,0 +1,9 @@
+{
+  "apikey": "insert_your_credentials_here",
+  "endpoints": "insert_your_credentials_here",
+  "iam_apikey_description": "insert_your_credentials_here",
+  "iam_apikey_name": "insert_your_credentials_here",
+  "iam_role_crn": "insert_your_credentials_here",
+  "iam_serviceid_crn": "insert_your_credentials_here",
+  "resource_instance_id": "insert_your_credentials_here"
+}

@@ -2,7 +2,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { CadernetaContract } from './caderneta-contract';
-export { CadernetaContract } from './caderneta-contract';
+import { USContrato } from './US-contrato';
 
-export const contracts: any[] = [ CadernetaContract ];
+export const contracts: any[] = [ USContrato ];
