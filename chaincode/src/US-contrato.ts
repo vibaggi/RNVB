@@ -1,4 +1,6 @@
 import { Context, Contract } from 'fabric-contract-api'
+import { Uteis } from './bibliotecas/uteis'
+import { Caderneta } from './modelos/caderneta'
 
 export class USContrato extends Contract {
 
@@ -6,7 +8,21 @@ export class USContrato extends Contract {
 
     async afterTransaction(ctx: Context){}
     
+    async aplicarVacina(ctx: Context, idCaderneta: number, idVacina: number, aplicador: string): Promise<string>{
+        let bufferVacina = await ctx.stub.getState(Uteis.gerarChave('VACINA', idVacina))
+        if(bufferVacina.length == 0) throw new Error('Vacina não existente')
 
+        let bufferCaderneta = await ctx.stub.getState(Uteis.gerarChave("CADERNETA", idCaderneta))
+        if(bufferCaderneta.length == 0) throw new Error('Cadernete não existe')
+
+        let caderneta = JSON.parse(bufferCaderneta.toString()) as Caderneta
+
+        caderneta.aplicarVacina(idVacina, aplicador)
+
+        await ctx.stub.putState(caderneta.extrairChave(), Buffer.from(JSON.stringify(caderneta)))
+
+        return "OK"
+    }
 
 
 }

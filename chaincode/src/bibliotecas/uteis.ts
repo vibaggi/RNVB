@@ -8,7 +8,7 @@ const ClientIdentity = require('fabric-shim').ClientIdentity;
  * 
  * Perceba que seus métodos são todos STATIC, não tente criar um objeto para a classe.
  */
-
+type tiposAtivo = 'CADERNETA' | 'VACINA' | 'LABORATORIO'
  export class Uteis {
 
     static extrairMSPID(ctx: Context): string|null {
@@ -34,5 +34,8 @@ const ClientIdentity = require('fabric-shim').ClientIdentity;
         }
     }
 
+    static gerarChave(tipoAtivo: tiposAtivo, idAtivo: number): string{
+        return tipoAtivo+"_"+idAtivo
+    }
 
  }
