@@ -4,7 +4,12 @@ import { Caderneta } from './modelos/caderneta'
 
 export class GovernoContrato extends Contract {
 
-    async beforeTransaction(ctx: Context){}
+    async beforeTransaction(ctx: Context){
+        //Verificar qual o mspid da organizacao
+        //verificar se o tipo dessa organizacao é valido
+        let tipo = Uteis.extrairTipoOrganizacaoMSPID(ctx); 
+        if(tipo != "governofederal") throw new Error('Sua organização não é um governo!')
+    }
 
     async afterTransaction(ctx: Context){}
 

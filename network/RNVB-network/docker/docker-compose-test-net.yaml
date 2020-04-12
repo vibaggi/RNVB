@@ -75,7 +75,7 @@ services:
       - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:7052
       - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.governo.federal.com:7051
       - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.governo.federal.com:7051
-      - CORE_PEER_LOCALMSPID=GovernoFederalMSP
+      - CORE_PEER_LOCALMSPID=brasil-governofederal-msp
     volumes:
         - /var/run/:/host/var/run/
         - ../organizations/peerOrganizations/governo.federal.com/peers/peer0.governo.federal.com/msp:/etc/hyperledger/fabric/msp
@@ -115,7 +115,7 @@ services:
       - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:9052
       - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.sus.com:9051
       - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.sus.com:9051
-      - CORE_PEER_LOCALMSPID=SUSMSP
+      - CORE_PEER_LOCALMSPID=sus-unidadesaude-msp
     volumes:
         - /var/run/:/host/var/run/
         - ../organizations/peerOrganizations/sus.com/peers/peer0.sus.com/msp:/etc/hyperledger/fabric/msp

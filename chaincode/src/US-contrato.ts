@@ -4,7 +4,13 @@ import { Caderneta } from './modelos/caderneta'
 
 export class USContrato extends Contract {
 
-    async beforeTransaction(ctx: Context){}
+    async beforeTransaction(ctx: Context){
+        //Verificar qual o mspid da organizacao
+        //verificar se o tipo dessa organizacao é valido
+        let tipo = Uteis.extrairTipoOrganizacaoMSPID(ctx); 
+        if(tipo != "unidadesaude") throw new Error('Sua organização não é uma unidade de saude!')
+
+    }
 
     async afterTransaction(ctx: Context){}
     

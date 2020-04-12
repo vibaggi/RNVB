@@ -313,16 +313,16 @@ approveForMyOrg 1
 
 ## check whether the chaincode definition is ready to be committed
 ## expect org1 to have approved and org2 not to
-checkCommitReadiness 1 "\"GovernoFederalMSP\": true" "\"SUSMSP\": false"
-checkCommitReadiness 2 "\"GovernoFederalMSP\": true" "\"SUSMSP\": false"
+checkCommitReadiness 1 "\"brasil-governofederal-msp\": true" "\"sus-unidadesaude-msp\": false"
+checkCommitReadiness 2 "\"brasil-governofederal-msp\": true" "\"sus-unidadesaude-msp\": false"
 
 ## now approve also for org2
 approveForMyOrg 2
 
 ## check whether the chaincode definition is ready to be committed
 ## expect them both to have approved
-checkCommitReadiness 1 "\"GovernoFederalMSP\": true" "\"SUSMSP\": true"
-checkCommitReadiness 2 "\"GovernoFederalMSP\": true" "\"SUSMSP\": true"
+checkCommitReadiness 1 "\"brasil-governofederal-msp\": true" "\"sus-unidadesaude-msp\": true"
+checkCommitReadiness 2 "\"brasil-governofederal-msp\": true" "\"sus-unidadesaude-msp\": true"
 
 ## now that we know for sure both orgs have approved, commit the definition
 commitChaincodeDefinition 1 2

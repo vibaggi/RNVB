@@ -13,8 +13,8 @@ O sistema de saude de um Pais depende do trabalho conjunto de diversas organiza�
 A pasta network é derivada do repositório oficial do [Hyperledger Fabric](https://github.com/hyperledger/fabric-samples). Para o funcionamento é necessário instalar os pré requisitos a partir da [documentação oficial](https://hyperledger-fabric.readthedocs.io/en/latest/install.html).
 
 Nesta rede há (até o momento) duas organizações.
-- Governo Federal (GovernoFederalMSP)
-- Sistema Único de Saude (SUSMSP)
+- Governo Federal (brasil-governofederal-msp)
+- Sistema Único de Saude (sus-unidadesaude-msp)
 
 Para iniciar a rede, uma vez que tenha instalado os pré requisitos, vá até /network/RNVB-network e execute:
 - `./network.sh up`

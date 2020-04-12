@@ -33,7 +33,7 @@ createChannelTx() {
 
 createAncorPeerTx() {
 
-	for orgmsp in GovernoFederalMSP SUSMSP; do
+	for orgmsp in brasil-governofederal-msp sus-unidadesaude-msp; do
 
 	echo "#######    Generating anchor peer update for ${orgmsp}  ##########"
 	set -x

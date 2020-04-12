@@ -47,10 +47,10 @@ Organizations:
     - &GovernoFederal
         # DefaultOrg defines the organization which is used in the sampleconfig
         # of the fabric.git development environment
-        Name: GovernoFederalMSP
+        Name: brasil-governofederal-msp
 
         # ID to load the MSP definition as
-        ID: GovernoFederalMSP
+        ID: brasil-governofederal-msp
 
         MSPDir: ../organizations/peerOrganizations/governo.federal.com/msp
 
@@ -60,16 +60,16 @@ Organizations:
         Policies:
             Readers:
                 Type: Signature
-                Rule: "OR('GovernoFederalMSP.admin', 'GovernoFederalMSP.peer', 'GovernoFederalMSP.client')"
+                Rule: "OR('brasil-governofederal-msp.admin', 'brasil-governofederal-msp.peer', 'brasil-governofederal-msp.client')"
             Writers:
                 Type: Signature
-                Rule: "OR('GovernoFederalMSP.admin', 'GovernoFederalMSP.client')"
+                Rule: "OR('brasil-governofederal-msp.admin', 'brasil-governofederal-msp.client')"
             Admins:
                 Type: Signature
-                Rule: "OR('GovernoFederalMSP.admin')"
+                Rule: "OR('brasil-governofederal-msp.admin')"
             Endorsement:
                 Type: Signature
-                Rule: "OR('GovernoFederalMSP.peer')"
+                Rule: "OR('brasil-governofederal-msp.peer')"
 
         # leave this flag set to true.
         AnchorPeers:
@@ -82,10 +82,10 @@ Organizations:
     - &SUS
         # DefaultOrg defines the organization which is used in the sampleconfig
         # of the fabric.git development environment
-        Name: SUSMSP
+        Name: sus-unidadesaude-msp
 
         # ID to load the MSP definition as
-        ID: SUSMSP
+        ID: sus-unidadesaude-msp
 
         MSPDir: ../organizations/peerOrganizations/sus.com/msp
 
@@ -95,16 +95,16 @@ Organizations:
         Policies:
             Readers:
                 Type: Signature
-                Rule: "OR('SUSMSP.admin', 'SUSMSP.peer', 'SUSMSP.client')"
+                Rule: "OR('sus-unidadesaude-msp.admin', 'sus-unidadesaude-msp.peer', 'sus-unidadesaude-msp.client')"
             Writers:
                 Type: Signature
-                Rule: "OR('SUSMSP.admin', 'SUSMSP.client')"
+                Rule: "OR('sus-unidadesaude-msp.admin', 'sus-unidadesaude-msp.client')"
             Admins:
                 Type: Signature
-                Rule: "OR('SUSMSP.admin')"
+                Rule: "OR('sus-unidadesaude-msp.admin')"
             Endorsement:
                 Type: Signature
-                Rule: "OR('SUSMSP.peer')"
+                Rule: "OR('sus-unidadesaude-msp.peer')"
 
         AnchorPeers:
             # AnchorPeers defines the location of peers which can be used

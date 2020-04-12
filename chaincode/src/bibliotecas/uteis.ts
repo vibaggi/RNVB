@@ -16,6 +16,11 @@ type tiposAtivo = 'CADERNETA' | 'VACINA' | 'LABORATORIO'
         return clientIdentity.getMSPID() || null;
     }
 
+    static extrairTipoOrganizacaoMSPID(ctx: Context): string{
+        let mspid = this.extrairMSPID(ctx)
+        return mspid.split("-")[1]
+    }
+
     /**
      * Transforma o Iterator retornado pelo Fabric em um array. 
      * Converte os dados Buffer para String.

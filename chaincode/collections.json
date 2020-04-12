@@ -6,7 +6,7 @@
                    {
                         "role": {
                              "name": "member",
-                             "mspId": "GovernoFederalMSP"
+                             "mspId": "brasil-governofederal-msp"
                         }
                    }
               ],

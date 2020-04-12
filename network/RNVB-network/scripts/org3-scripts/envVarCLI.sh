@@ -22,12 +22,12 @@ setOrdererGlobals() {
 setGlobals() {
   ORG=$1
   if [ $ORG -eq 1 ]; then
-    CORE_PEER_LOCALMSPID="GovernoFederalMSP"
+    CORE_PEER_LOCALMSPID="brasil-governofederal-msp"
     CORE_PEER_TLS_ROOTCERT_FILE=$PEER0_ORG1_CA
     CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/organizations/peerOrganizations/governo.federal.com/users/Admin@governo.federal.com/msp
     CORE_PEER_ADDRESS=peer0.governo.federal.com:7051
   elif [ $ORG -eq 2 ]; then
-    CORE_PEER_LOCALMSPID="SUSMSP"
+    CORE_PEER_LOCALMSPID="sus-unidadesaude-msp"
     CORE_PEER_TLS_ROOTCERT_FILE=$PEER0_ORG2_CA
     CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/organizations/peerOrganizations/sus.com/users/Admin@sus.com/msp
     CORE_PEER_ADDRESS=peer0.sus.com:9051

@@ -29,12 +29,12 @@ setGlobals() {
   fi
   echo "Using organization ${USING_ORG}"
   if [ $USING_ORG -eq 1 ]; then
-    export CORE_PEER_LOCALMSPID="GovernoFederalMSP"
+    export CORE_PEER_LOCALMSPID="brasil-governofederal-msp"
     export CORE_PEER_TLS_ROOTCERT_FILE=$PEER0_ORG1_CA
     export CORE_PEER_MSPCONFIGPATH=${PWD}/organizations/peerOrganizations/governo.federal.com/users/Admin@governo.federal.com/msp
     export CORE_PEER_ADDRESS=localhost:7051
   elif [ $USING_ORG -eq 2 ]; then
-    export CORE_PEER_LOCALMSPID="SUSMSP"
+    export CORE_PEER_LOCALMSPID="sus-unidadesaude-msp"
     export CORE_PEER_TLS_ROOTCERT_FILE=$PEER0_ORG2_CA
     export CORE_PEER_MSPCONFIGPATH=${PWD}/organizations/peerOrganizations/sus.com/users/Admin@sus.com/msp
     export CORE_PEER_ADDRESS=localhost:9051
