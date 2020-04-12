@@ -7,7 +7,10 @@
         "declaration": true,
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
-        "sourceMap": true
+        "sourceMap": true,
+        // "noUnusedLocals": true,
+        // "noUnusedParameters": true,    
+        // "noImplicitReturns": true,
     },
     "include": [
         "./src/**/*"

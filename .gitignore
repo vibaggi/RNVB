@@ -1,0 +1,2 @@
+#Ignorando chaincodes compactados gerados
+*.tar.gz

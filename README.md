@@ -17,18 +17,26 @@ Nesta rede há (até o momento) duas organizações.
 - Sistema Único de Saude (SUSMSP)
 
 Para iniciar a rede, uma vez que tenha instalado os pré requisitos, vá até /network/RNVB-network e execute:
-`./network.sh up`
-`./network.sh createChannel`
+- `./network.sh up`
+- `./network.sh createChannel`
 
 Caso queira derrumar a rede:
-`./network.sh down`
+- `./network.sh down`
 
 ## Chaincode
 
 Chaincode está sendo construido em Typescript, para tal é necessário a versão 1.4.x ou posterior do Fabric. A estrutura básica foi gerada com a ajuda da extensão IBM Blockchain Platform para VSCode.
+
+Para fazer o deploy do chaincode (Após ter criado a rede), execute:
+- `./network.sh deployCC -l typescript -v 1` onde o argumento de -v é a versão que será instalado o chaincode.
+
+Sempre que for deployar um novo chaincode, lembre de incrementar o numero da versão.
 
 ### Contratos
 
 O projeto conta até o momento com os seguintes contratos:
 
 * USContrato -> SmartContract para as organizações dos tipos Unidades de Saude.
+    - Responsavel por aplicar a vacina.
+* GovernoContrato -> SmartContract para o Governo.
+    - Responsavel por cadastrar a Caderneta e a Vacina.

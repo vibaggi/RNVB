@@ -13,8 +13,10 @@ export class Caderneta extends Ativo{
         aplicador: string
     }[];
 
-    constructor(){
+    constructor(cpf: number){
         super()
+        this.cpf = cpf
+        this.idAtivo = cpf
     }
 
     public aplicarVacina(idVacina: number, aplicador: string): void {
