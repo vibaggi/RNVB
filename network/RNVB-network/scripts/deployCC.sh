@@ -226,12 +226,12 @@ chaincodeInvokeInit() {
   # it using the "-o" option
   if [ -z "$CORE_PEER_TLS_ENABLED" -o "$CORE_PEER_TLS_ENABLED" = "false" ]; then
     set -x
-    peer chaincode invoke -o localhost:7050 -C $CHANNEL_NAME -n rnvb $PEER_CONN_PARMS --isInit -c '{"function":"aplicarVacina","Args":["100","100","VITOR"]}' >&log.txt
+    peer chaincode invoke -o localhost:7050 -C $CHANNEL_NAME -n rnvb $PEER_CONN_PARMS --isInit -c '{"function":"cadastrarCaderneta","Args":["39391675840"]}' >&log.txt
     res=$?
     set +x
   else
     set -x
-    peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.rnvb.com --tls $CORE_PEER_TLS_ENABLED --cafile $ORDERER_CA -C $CHANNEL_NAME -n rnvb $PEER_CONN_PARMS --isInit -c '{"function":"aplicarVacina","Args":["100","100","VITOR"]}' >&log.txt
+    peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.rnvb.com --tls $CORE_PEER_TLS_ENABLED --cafile $ORDERER_CA -C $CHANNEL_NAME -n rnvb $PEER_CONN_PARMS --isInit -c '{"function":"cadastrarCaderneta","Args":["39391675840"]}' >&log.txt
     res=$?
     set +x
   fi
@@ -251,12 +251,12 @@ chaincodeInvoke() {
   # it using the "-o" option
   if [ -z "$CORE_PEER_TLS_ENABLED" -o "$CORE_PEER_TLS_ENABLED" = "false" ]; then
     set -x
-    peer chaincode invoke -o localhost:7050 -C $CHANNEL_NAME -n rnvb $PEER_CONN_PARMS  -c '{"function":"aplicarVacina","Args":["100","100","VITOR"]}' >&log.txt
+    peer chaincode invoke -o localhost:7050 -C $CHANNEL_NAME -n rnvb $PEER_CONN_PARMS  -c '{"function":"cadastrarCaderneta","Args":["39391675840"]}' >&log.txt
     res=$?
     set +x
   else
     set -x
-    peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.rnvb.com --tls $CORE_PEER_TLS_ENABLED --cafile $ORDERER_CA -C $CHANNEL_NAME -n rnvb $PEER_CONN_PARMS -c '{"function":"aplicarVacina","Args":["100","100","VITOR"]}' >&log.txt
+    peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.rnvb.com --tls $CORE_PEER_TLS_ENABLED --cafile $ORDERER_CA -C $CHANNEL_NAME -n rnvb $PEER_CONN_PARMS -c '{"function":"cadastrarCaderneta","Args":["39391675840"]}' >&log.txt
     res=$?
     set +x
 	fi

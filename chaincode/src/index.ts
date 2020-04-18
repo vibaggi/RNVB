@@ -3,5 +3,6 @@
  */
 
 import { USContrato } from './US-contrato';
+import { GovernoContrato } from './Governo-contrato';
 
-export const contracts: any[] = [ USContrato ];
+export const contracts: any[] = [ GovernoContrato, USContrato ];

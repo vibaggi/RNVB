@@ -1,4 +1,5 @@
 import { Context } from "fabric-contract-api";
+import { tiposAtivo } from './types'
 
 const ClientIdentity = require('fabric-shim').ClientIdentity;
 
@@ -8,7 +9,6 @@ const ClientIdentity = require('fabric-shim').ClientIdentity;
  * 
  * Perceba que seus métodos são todos STATIC, não tente criar um objeto para a classe.
  */
-type tiposAtivo = 'CADERNETA' | 'VACINA' | 'LABORATORIO'
  export class Uteis {
 
     static extrairMSPID(ctx: Context): string|null {

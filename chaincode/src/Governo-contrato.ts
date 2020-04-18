@@ -1,6 +1,7 @@
 import { Context, Contract } from 'fabric-contract-api'
 import { Uteis } from './bibliotecas/uteis'
 import { Caderneta } from './modelos/caderneta'
+import { Vacina } from './modelos/vacina';
 
 export class GovernoContrato extends Contract {
 
@@ -23,9 +24,13 @@ export class GovernoContrato extends Contract {
         return "OK"
     }
 
-    async cadastrarVacina(ctx: Context, idVacina: number): Promise<string>{
+    async cadastrarVacina(ctx: Context, idVacina: number, nomeDoenca: string, dataValidadePosAplicacao: Date, dataValidadeParaAplicacao: Date): Promise<string>{
         let bufferVacina = await ctx.stub.getState(Uteis.gerarChave('VACINA', idVacina))
-        
+        if(bufferVacina.length != 0) throw new Error('Já existe uma vacina cadastrada!')
+
+        let vacina = new Vacina(idVacina, nomeDoenca, dataValidadePosAplicacao, dataValidadeParaAplicacao)
+
+        await ctx.stub.putState(vacina.extrairChave(), Buffer.from(JSON.stringify(vacina)))
 
         return "OK"
     }

@@ -14,7 +14,7 @@ export class USContrato extends Contract {
 
     async afterTransaction(ctx: Context){}
     
-    async aplicarVacina(ctx: Context, idCaderneta: number, idVacina: number, aplicador: string): Promise<string>{
+    async aplicarVacina(ctx: Context, idCaderneta: number, idVacina: number, aplicador: string, unidade: string): Promise<string>{
         let bufferVacina = await ctx.stub.getState(Uteis.gerarChave('VACINA', idVacina))
         if(bufferVacina.length == 0) throw new Error('Vacina não existente')
 
@@ -23,7 +23,7 @@ export class USContrato extends Contract {
 
         let caderneta = JSON.parse(bufferCaderneta.toString()) as Caderneta
 
-        caderneta.aplicarVacina(idVacina, aplicador)
+        caderneta.aplicarVacina(idVacina, aplicador, unidade, Uteis.extrairMSPID(ctx))
 
         await ctx.stub.putState(caderneta.extrairChave(), Buffer.from(JSON.stringify(caderneta)))
 
